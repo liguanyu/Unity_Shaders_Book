@@ -29,3 +29,30 @@ v2f结构体中的TEXCOORD0，TEXCOORD1和TEXCOORD2含义：
 在上面的示例中，`TEXCOORD0` 被用于表示经过变换的顶点法线（`worldNormal`），而不是传统意义上的纹理坐标。在这种情况下，`TEXCOORD0` 是一个自定义语义，用于在顶点和片段着色器之间传递世界空间法线。
 
 需要注意的是，在使用 `TEXCOORDn` 语义时，要确保在顶点着色器和片段着色器之间保持一致，以避免混淆或错误的数据传递。
+
+
+
+## UnityObjectToWorldDir和UnityObjectToWorldNormal区别
+```shaderlab
+// Transforms direction from object to world space
+inline float3 UnityObjectToWorldDir( in float3 dir )
+{
+    return normalize(mul((float3x3)unity_ObjectToWorld, dir));
+}
+
+
+
+// Transforms normal from object to world space
+inline float3 UnityObjectToWorldNormal( in float3 norm )
+{
+#ifdef UNITY_ASSUME_UNIFORM_SCALING
+    return UnityObjectToWorldDir(norm);
+#else
+    // mul(IT_M, norm) => mul(norm, I_M) => {dot(norm, I_M.col0), dot(norm, I_M.col1), dot(norm, I_M.col2)}
+    return normalize(mul(norm, (float3x3)unity_WorldToObject));
+#endif
+}
+```
+当大小不均匀的时候时，不一致
+![直接变化](1.jpg)
+![求变化面的法线](2.jpg)
