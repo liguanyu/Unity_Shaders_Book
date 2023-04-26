@@ -42,7 +42,7 @@ Shader "Unity Shaders Book/Chapter 7/Single Texture" {
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
                 // 先用缩放属性_MainTex_ST.xy对顶点纹理坐标进行缩放，然后再使用偏移属性_MainTex_ST.zw进行偏移
-                // 也可以直接 o.uv = TRANSFORM_TEX(v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw)
+                // 也可以直接 o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
                 o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
                 return o;
             }
