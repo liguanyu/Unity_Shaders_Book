@@ -5,7 +5,7 @@
 
 | 模型空间转换函数 | 功能描述 |
 | ---------------- | -------- |
-| ~~UnityObjectToWorldPos(pos)~~ | 返回把顶点坐标从模型空间转换到世界空间。使用`mul(unity_ObjectToWorld, v.vertex);` |
+| ~~UnityObjectToWorldPos(pos)~~ | 返回把顶点坐标从模型空间转换到世界空间。使用`mul(unity_ObjectToWorld, v.vertex).xyz;` |
 | UnityObjectToViewPos(pos) | 返回把顶点坐标从模型空间转换到观察空间。输入pos：三元坐标； |
 | UnityObjectToClipPos(pos) | 返回把顶点坐标从模型空间转换到裁剪空间。输入pos：三元坐标； |
 | UnityObjectToWorldDir(dir) | 返回把方向矢量从模型空间转换到世界空间。输入pos：三元向量； |
