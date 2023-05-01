@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AlphaBlendBothSidesMat
-  m_Shader: {fileID: 4800000, guid: 429b98a86927e474daeceabc8314168d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 700f1a3b08c52b548b9cfb9d7b01bdba, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
