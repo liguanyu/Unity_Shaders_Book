@@ -13,6 +13,8 @@ Shader "Unity Shaders Book/Chapter 8/Alpha Test"
         Pass {
             Tags { "LightMode"="ForwardBase" }
 
+            Cull Off
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag

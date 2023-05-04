@@ -12,6 +12,8 @@ Shader "Unity Shaders Book/Chapter 9/Forward Rendering"
     }
     SubShader
     {
+        Tags { "RenderType"="Opaque" }
+
         // base pass
         pass {
             Tags { "LightMode"="ForwardBase" }
