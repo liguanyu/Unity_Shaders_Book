@@ -65,5 +65,5 @@ Shader "Unity Shaders Book/Chapter 6/Specular Pixel-Level" {
         }
     }
 
-    Fallback "Diffuse"
+    Fallback "Specular"
 }

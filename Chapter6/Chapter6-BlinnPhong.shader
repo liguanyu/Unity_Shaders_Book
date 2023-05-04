@@ -65,5 +65,5 @@ Shader "Unity Shaders Book/Chapter 6/Blinn Phong" {
         }
     }
 
-    Fallback "Diffuse"
+    Fallback "Specular"
 }
