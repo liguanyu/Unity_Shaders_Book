@@ -125,11 +125,11 @@ public class ProceduralTextureGeneration : MonoBehaviour
                 {
                     for (int j = 0; j < 3; j++)
                     {
-                        //Ô²ÐÄ
+                        //åœ†å¿ƒ
                         Vector2 circleCenter = new Vector2(circleInterval * (i + 1), circleInterval * (j + 1));
-                        //ÏñËØÓëÔ²ÐÄ¾àÀë
+                        //åƒç´ ä¸Žåœ†å¿ƒè·ç¦»
                         float dist = Vector2.Distance(new Vector2(w, h), circleCenter) - radius;
-                        //blur±ß½ç
+                        //blurè¾¹ç•Œ
                         Color color = _MixColor(circleColor, new Color(pixel.r, pixel.g, pixel.b, 0f), Mathf.SmoothStep(0f, 1f, dist * edgeBlur));
 
                         pixel = _MixColor(pixel, color, color.a);
