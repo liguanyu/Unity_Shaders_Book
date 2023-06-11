@@ -59,6 +59,7 @@ Shader "Unity Shaders Book/Chapter 12/Brightness Saturation and Contrast"
                 fixed3 finalColor = renderTex.rgb * _Brightness;
 
                 fixed luminance = 0.2125 * renderTex.r + 0.7154 * renderTex.g + 0.0721 * renderTex.b;
+                // 亮度值
                 fixed3 luminanceColor = fixed3(luminance, luminance, luminance);
                 finalColor = lerp(luminanceColor, finalColor, _Saturation);
 
