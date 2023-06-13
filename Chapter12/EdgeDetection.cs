@@ -7,14 +7,14 @@ public class EdgeDetection : PostEffectsBase
     // 边缘检测
 
     public Shader edgeDetectionShader;
-    private Material edgeDetectionMaterial;
+    private Material gaussianBlurMaterial;
 
     public Material material
     {
         get
         {
-            edgeDetectionMaterial = CheckShaderAndCreateMaterial(edgeDetectionShader, edgeDetectionMaterial);
-            return edgeDetectionMaterial;
+            gaussianBlurMaterial = CheckShaderAndCreateMaterial(edgeDetectionShader, gaussianBlurMaterial);
+            return gaussianBlurMaterial;
         }
     }
 
